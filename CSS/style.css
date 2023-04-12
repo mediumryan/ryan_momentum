@@ -1,0 +1,175 @@
+/* 스타일 리셋 */
+@import 'reset.css';
+/* 커스텀 디자인 */
+:root {
+  --color-white : #FFF;
+  --color-violet : #5b2386;
+  --color-yellow : #F5DF4D;
+  --color-grey : #BABCBE;
+
+  --font-family-Noto : 'Noto Sans KR';
+  --font-family-Enjoy : 'OTEnjoystoriesBA';
+  --font-family-G-Medium : 'GmarketSansMedium';
+  --font-family-G-Bold : 'GmarketSansBold';
+
+  --animation-duration : 300ms;
+}
+/* 폰트 (4종류) */
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+}
+
+html {
+  font-size : 16px;
+}
+
+button, input {
+  border : none;
+  border-radius: 8px;
+  outline : none;
+  padding: 8px 12px;
+  cursor : pointer;
+  margin-left: .5rem;
+}
+
+button {
+  background-color: var(--color-yellow);
+  color: var(--color-violet);
+  transition: var(--animation-duration) opacity;
+}
+
+button:hover {
+  opacity: .77;
+}
+
+.hidden {
+  display: none;
+}
+/* 메인 박스 + 배경화면 */
+#main_container {
+  position: relative;
+  font-family: 'GmarketSansMedium';
+  color : #fff;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 0;
+}
+/* 로그인 */
+#login_container {
+  margin: 2rem 0;
+}
+
+#login_input, #login_button {
+  font-size : 1.25rem;
+}
+
+#greeting {
+  font-size : 3.5rem;
+  color : var(--color-yellow);
+  font-weight: 700;
+  margin: 2rem 0;
+}
+/* 시계 */
+#clock_container {
+  position: absolute;
+  top : 2rem;
+  right : 2rem;
+  font-size : 1.75rem;
+  color : var(--color-yellow);
+  font-weight: 700;
+  opacity: .77;
+}
+/* 명언 */
+#quotes_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 10rem;
+}
+
+.quotes_quote {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--color-white);
+}
+
+.quotes_author {
+  color: var(--color-yellow);
+}
+
+/* 투두리스트 */
+#todo_container {
+  margin: 2rem 0;
+}
+
+.todo_form {
+  margin-bottom: 2rem;
+}
+
+#todo_input, #todo_button {
+  font-size: 1.25rem;
+}
+
+#list_container {
+  max-height : 170px;
+  overflow-y: scroll;
+}
+
+#list_container li {
+  background-color: var(--color-white);
+  color: var(--color-violet);
+  padding: 8px 12px;
+  margin: 8px 12px;
+  border-radius: 8px;
+  
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 날씨 */
+#weather_container {
+  position: absolute;
+  top : 2rem;
+  left : 2rem;
+  font-size : 1.75rem;
+  color : var(--color-yellow);
+  font-weight: 700;
+  opacity: .77;
+}
+
+#weather_container p {
+  margin-bottom: 1rem;
+}
