@@ -16,7 +16,8 @@ const imgArr = [
 
 // 랜덤 이미지 파일 경로 얻기
 function getRandomImagePath(arr) {
-  return arr[(randomIndex = Math.floor(Math.random() * arr.length))];
+  const randomNum = Math.floor(Math.random() * arr.length);
+  return arr[randomNum];
 }
 
 // 배경화면에 랜덤 이미지 적용
