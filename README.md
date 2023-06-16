@@ -1,22 +1,10 @@
-# HTML/CSS/JS Replit Extensions Starter
+구글 익스텐션 모멘텀 어플리케이션을 제 나름대로 클론코딩 해보았습니다.
+적체적으로 '노마드 코더스'님의 무료 강의를 토대로 진행하였지만, 제 나름대로 디자인과 로직을 추가, 변경하였습니다.
 
-This is the simplest way to use Extensions: a static HTML website that loads the Extensions client.
+주요 기능은 이하와 같습니다.
 
-## Get Started
-0. Fork this Repl if you have not done so already
-1. Run the Repl to open the Webview tab
-2. Copy the URL from the Webview tab (should be in the format of https://EXTENSION.USERNAME.repl.co)
-3. Open the CLUI by pressing `Cmd+K`(macOS) / `Ctrl+K`(PC)
-4. Find and select the `Extensions` command
-5. Select the `URL` command
-6. Paste the URL into the input box that appears
-7. See the Extensions tab load up showing a list of the files in this Repl
-
-## Extensions APIs
-You can find up-to-date docs on how to use the Extensions APIs at https://replit.com/extensions-docs or in the Workspace by opening Extensions Docs tab, which you can find in the CLUI (`Cmd+K`(macOS) / `Ctrl+K`(PC)).
-
-## Manifest file
-You can find up-to-date docs on how to configure the manifest file (found at `extension.json`) at https://replit.com/extensions-docs or in the Workspace by opening Extensions Docs tab, which you can find in the CLUI (`Cmd+K`(macOS) / `Ctrl+K`(PC)).
-
-## Publishing your Extension
-You can find up-to-date docs on how to publish your Extension at https://replit.com/extensions-docs or in the Workspace by opening Extensions Docs tab, which you can find in the CLUI (`Cmd+K`(macOS) / `Ctrl+K`(PC)).
+- 새로고침 시, 배경화면 변경
+- 디지털 시계 표시
+- 현재 자신의 위치 및 기온, 날씨 표시
+- 이름 입력 시 인사 문구 출력
+- 체크 리스트
