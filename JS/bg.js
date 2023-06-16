@@ -21,4 +21,4 @@ function getRandomElement(arr) {
 
 // 배경화면에 랜덤 이미지 삽입
 const randomImage = getRandomElement(imgArr);
-container.style.backgroundImage = `url('../Images/${randomImage}')`;
+container.style.backgroundImage = `url('https://mediumryan.github.io/momemtum_clone/Images/${randomImage}')`;
