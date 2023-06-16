@@ -1,68 +1,60 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Momentum - clone</title>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="CSS/style.css" rel="stylesheet" type="text/css" />
-  <!-- Loads the Extensions API -->
-  <script src="https://unpkg.com/@replit/extensions@0.24.0/dist/index.global.js"></script>
-</head>
-
-<body>
-  <!--  메인박스  -->
-  <div id="main_container">
-    <!--  로그인  -->
-    <form id="login_container">
-      <input 
-        type="text" 
-        id="login_input"
-        placeholder="What is your name?"
-        required
-        >
-      <button id="login_button">Submit</button>
-    </form>
-    <!--   인사   -->
-    <h3 id="greeting"></h3>
-    <!--   시계   -->
-    <div id="clock_container">
-      11:30 AM
-    </div>
-    <!--   명언   -->
-    <div id="quotes_container">
-      <p class="quotes_quote">asdasd</p>
-      <p class="quotes_author">123123</p>
-    </div>
-    <!--   투두리스트   -->
-    <div id="todo_container">
-      <form class="todo_form">
-        <input 
-          type="text" 
-          id="todo_input"
-          placeholder="What will you do today?"
+  <body>
+    <!--  메인박스  -->
+    <div id="main_container">
+      <!--  로그인  -->
+      <form id="login_container">
+        <input
+          type="text"
+          id="login_input"
+          placeholder="What is your name?"
           required
-          >
-        <button id="todo_button">Submit</button>
+        />
+        <button id="login_button">Submit</button>
       </form>
-      <ul id="list_container">
-      </ul>
-    </div>
-    <!--   날씨   -->
+      <!--   인사   -->
+      <h3 id="greeting"></h3>
+      <!--   시계   -->
+      <div id="clock_container"></div>
+      <!--   명언   -->
+      <div id="quotes_container">
+        <p class="quotes_quote"></p>
+        <p class="quotes_author"></p>
+      </div>
+      <!--   투두리스트   -->
+      <div id="todo_container">
+        <form class="todo_form">
+          <input
+            type="text"
+            id="todo_input"
+            placeholder="What will you do today?"
+            required
+          />
+          <button id="todo_button">Submit</button>
+        </form>
+        <ul id="list_container"></ul>
+      </div>
+      <!--   날씨   -->
       <div id="weather_container">
         <p class="weather_location"></p>
         <p class="weather_temp"></p>
         <p class="weather_weather"></p>
       </div>
-  </div>
-  <!--  JS 파일 불러오기  -->
-  <script src="script.js"></script>
-  <script src="JS/bg.js"></script>
-  <script src="JS/login.js"></script>
-  <script src="JS/clock.js"></script>
-  <script src="JS/quotes.js"></script>
-  <script src="JS/todo.js"></script>
-  <script src="JS/weather.js"></script>
-</body>
-
+    </div>
+    <!--  JS 파일 불러오기  -->
+    <script src="JS/bg.js"></script>
+    <script src="JS/login.js"></script>
+    <script src="JS/clock.js"></script>
+    <script src="JS/quotes.js"></script>
+    <script src="JS/todo.js"></script>
+    <script src="JS/weather.js"></script>
+  </body>
 </html>
