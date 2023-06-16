@@ -1,61 +1,57 @@
 /* 스타일 리셋 */
-@import 'reset.css';
+@import "reset.css";
 /* 커스텀 디자인 */
 :root {
-  --color-white : #FFF;
-  --color-violet : #5b2386;
-  --color-yellow : #F5DF4D;
-  --color-grey : #BABCBE;
-
-  --font-family-Noto : 'Noto Sans KR';
-  --font-family-Enjoy : 'OTEnjoystoriesBA';
-  --font-family-G-Medium : 'GmarketSansMedium';
-  --font-family-G-Bold : 'GmarketSansBold';
-
-  --animation-duration : 300ms;
+  /* color */
+  --color-white: #fff;
+  --color-violet: #5b2386;
+  --color-yellow: #f5df4d;
+  --color-grey: #babcbe;
+  /* font-size */
+  --font-size-large: 36px;
+  --font-size-medium-large: 24px;
+  --font-size-medium: 18px;
+  --font-size-small: 14px;
+  --font-size-micro: 10px;
+  /* margin */
+  --margin-size-large: 80px;
+  --margin-size-medium-large: 36px;
+  --margin-size-medium: 22px;
+  --margin-size-small: 18px;
+  --margin-size-micro: 14px;
+  /* padding */
+  --padding-size-large: 80px;
+  --padding-size-medium-large: 36px;
+  --padding-size-medium: 22px;
+  --padding-size-small: 18px;
+  --padding-size-micro: 14px;
+  /* font-style */
+  --main-font: "GmarketSansMedium";
+  /* animation */
+  --animation-duration: 300ms;
 }
 /* 폰트 (4종류) */
-@font-face {
-    font-family: 'OTEnjoystoriesBA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face {
-    font-family: 'GmarketSansBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
-    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
-    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
-  font-size : 16px;
+  font-size: 16px;
 }
 
-button, input {
-  border : none;
+button,
+input {
+  border: none;
   border-radius: 8px;
-  outline : none;
+  outline: none;
   padding: 8px 12px;
-  cursor : pointer;
-  margin-left: .5rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
 }
 
 button {
@@ -65,7 +61,7 @@ button {
 }
 
 button:hover {
-  opacity: .77;
+  opacity: 0.77;
 }
 
 .hidden {
@@ -74,8 +70,8 @@ button:hover {
 /* 메인 박스 + 배경화면 */
 #main_container {
   position: relative;
-  font-family: 'GmarketSansMedium';
-  color : #fff;
+  font-family: var(--main-font);
+  color: #fff;
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -90,25 +86,26 @@ button:hover {
   margin: 2rem 0;
 }
 
-#login_input, #login_button {
-  font-size : 1.25rem;
+#login_input,
+#login_button {
+  font-size: 1.25rem;
 }
 
 #greeting {
-  font-size : 3.5rem;
-  color : var(--color-yellow);
+  font-size: 3.5rem;
+  color: var(--color-yellow);
   font-weight: 700;
   margin: 2rem 0;
 }
 /* 시계 */
 #clock_container {
   position: absolute;
-  top : 2rem;
-  right : 2rem;
-  font-size : 1.75rem;
-  color : var(--color-yellow);
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.75rem;
+  color: var(--color-yellow);
   font-weight: 700;
-  opacity: .77;
+  opacity: 0.77;
 }
 /* 명언 */
 #quotes_container {
@@ -137,12 +134,13 @@ button:hover {
   margin-bottom: 2rem;
 }
 
-#todo_input, #todo_button {
+#todo_input,
+#todo_button {
   font-size: 1.25rem;
 }
 
 #list_container {
-  max-height : 170px;
+  max-height: 170px;
   overflow-y: scroll;
 }
 
@@ -152,7 +150,7 @@ button:hover {
   padding: 8px 12px;
   margin: 8px 12px;
   border-radius: 8px;
-  
+
   line-height: 1.5;
   display: flex;
   justify-content: space-between;
@@ -162,14 +160,37 @@ button:hover {
 /* 날씨 */
 #weather_container {
   position: absolute;
-  top : 2rem;
-  left : 2rem;
-  font-size : 1.75rem;
-  color : var(--color-yellow);
+  top: 2rem;
+  left: 2rem;
+  font-size: 1.75rem;
+  color: var(--color-yellow);
   font-weight: 700;
-  opacity: .77;
+  opacity: 0.77;
 }
 
 #weather_container p {
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 413px) {
+  :root {
+    /* font-size */
+    --font-size-large: 28px;
+    --font-size-medium-large: 20px;
+    --font-size-medium: 14px;
+    --font-size-small: 10px;
+    --font-size-micro: 8px;
+    /* margin */
+    --margin-size-large: 40px;
+    --margin-size-medium-large: 18px;
+    --margin-size-medium: 11px;
+    --margin-size-small: 9px;
+    --margin-size-micro: 7px;
+    /* padding */
+    --padding-size-large: 40px;
+    --padding-size-medium-large: 18px;
+    --padding-size-medium: 11px;
+    --padding-size-small: 9px;
+    --padding-size-micro: 7px;
+  }
 }
