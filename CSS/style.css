@@ -8,11 +8,11 @@
   --color-yellow: #f5df4d;
   --color-grey: #babcbe;
   /* font-size */
-  --font-size-large: 36px;
-  --font-size-medium-large: 24px;
-  --font-size-medium: 18px;
-  --font-size-small: 14px;
-  --font-size-micro: 10px;
+  --font-size-large: 48px;
+  --font-size-medium-large: 36px;
+  --font-size-medium: 24px;
+  --font-size-small: 18px;
+  --font-size-micro: 12px;
   /* margin */
   --margin-size-large: 80px;
   --margin-size-medium-large: 36px;
@@ -40,18 +40,14 @@
   font-style: normal;
 }
 
-html {
-  font-size: 16px;
-}
-
 button,
 input {
   border: none;
   border-radius: 8px;
   outline: none;
-  padding: 8px 12px;
+  padding: calc(var(--padding-size-small)) var(--padding-size-micro);
   cursor: pointer;
-  margin-left: 0.5rem;
+  margin-left: calc(var(--margin-size-small));
 }
 
 button {
@@ -79,7 +75,27 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10rem 0;
+}
+
+/* 시계 - 날씨 */
+.clockWeather {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--margin-size-medium-large);
+}
+
+.clockWeather > * {
+  font-size: var(--font-size-medium);
+  color: var(--color-yellow);
+  font-weight: 700;
+  opacity: 0.77;
+  margin: 0 12px;
+  text-align: center;
+}
+
+#weather_container p {
+  margin-bottom: 1rem;
 }
 /* 로그인 */
 #login_container {
@@ -88,36 +104,30 @@ button:hover {
 
 #login_input,
 #login_button {
-  font-size: 1.25rem;
+  font-size: var(--font-size-medium);
 }
 
 #greeting {
-  font-size: 3.5rem;
+  font-size: var(--font-size-large);
   color: var(--color-yellow);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
   font-weight: 700;
-  margin: 2rem 0;
+  padding: var(--padding-size-small) var(--padding-size-medium);
+  backdrop-filter: blur(10px);
 }
-/* 시계 */
-#clock_container {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  font-size: 1.75rem;
-  color: var(--color-yellow);
-  font-weight: 700;
-  opacity: 0.77;
-}
+
 /* 명언 */
 #quotes_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2rem 10rem;
+  margin: var(--margin-size-medium-large) 10rem;
 }
 
 .quotes_quote {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  margin-bottom: var(--margin-size-small);
+  font-size: var(--font-size-medium);
   color: var(--color-white);
 }
 
@@ -127,59 +137,52 @@ button:hover {
 
 /* 투두리스트 */
 #todo_container {
-  margin: 2rem 0;
+  margin: var(--margin-size-medium-large) 0;
 }
 
 .todo_form {
-  margin-bottom: 2rem;
+  margin-bottom: var(--margin-size-medium-large);
 }
 
 #todo_input,
 #todo_button {
-  font-size: 1.25rem;
+  font-size: var(--font-size-medium);
 }
 
 #list_container {
-  max-height: 170px;
+  max-height: 240px;
   overflow-y: scroll;
 }
 
 #list_container li {
   background-color: var(--color-white);
   color: var(--color-violet);
-  padding: 8px 12px;
-  margin: 8px 12px;
+  padding: calc(var(--padding-size-small) / 2) var(--padding-size-micro);
+  margin: calc(var(--margin-size-small) / 2) var(--margin-size-micro);
   border-radius: 8px;
 
   line-height: 1.5;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-/* 날씨 */
-#weather_container {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  font-size: 1.75rem;
-  color: var(--color-yellow);
-  font-weight: 700;
-  opacity: 0.77;
-}
-
-#weather_container p {
-  margin-bottom: 1rem;
+  /* 글래스모피즘 */
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 @media screen and (max-width: 413px) {
   :root {
     /* font-size */
-    --font-size-large: 28px;
-    --font-size-medium-large: 20px;
-    --font-size-medium: 14px;
-    --font-size-small: 10px;
-    --font-size-micro: 8px;
+    --font-size-large: 36px;
+    --font-size-medium-large: 24px;
+    --font-size-medium: 18px;
+    --font-size-small: 14px;
+    --font-size-micro: 10px;
     /* margin */
     --margin-size-large: 40px;
     --margin-size-medium-large: 18px;
@@ -192,5 +195,15 @@ button:hover {
     --padding-size-medium: 11px;
     --padding-size-small: 9px;
     --padding-size-micro: 7px;
+  }
+
+  .clockWeather > * {
+    font-size: var(--font-size-medium);
+  }
+  #quotes_container {
+    margin: var(--margin-size-medium-large) var(--margin-size-large);
+  }
+  #list_container {
+    max-height: 560px;
   }
 }

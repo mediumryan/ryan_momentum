@@ -10,6 +10,16 @@
   <body>
     <!--  메인박스  -->
     <div id="main_container">
+      <div class="clockWeather">
+        <!--   날씨   -->
+        <div id="weather_container">
+          <p class="weather_location"></p>
+          <p class="weather_temp"></p>
+          <p class="weather_weather"></p>
+        </div>
+        <!--   시계   -->
+        <div id="clock_container"></div>
+      </div>
       <!--  로그인  -->
       <form id="login_container">
         <input
@@ -22,8 +32,6 @@
       </form>
       <!--   인사   -->
       <h3 id="greeting"></h3>
-      <!--   시계   -->
-      <div id="clock_container"></div>
       <!--   명언   -->
       <div id="quotes_container">
         <p class="quotes_quote"></p>
@@ -41,12 +49,6 @@
           <button id="todo_button">Submit</button>
         </form>
         <ul id="list_container"></ul>
-      </div>
-      <!--   날씨   -->
-      <div id="weather_container">
-        <p class="weather_location"></p>
-        <p class="weather_temp"></p>
-        <p class="weather_weather"></p>
       </div>
     </div>
     <!--  JS 파일 불러오기  -->
