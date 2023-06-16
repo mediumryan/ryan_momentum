@@ -21,5 +21,5 @@ function getRandomImagePath(arr) {
 }
 
 // 배경화면에 랜덤 이미지 적용
-const randomImagePath = getRandomImagePath(imgPaths);
+const randomImagePath = getRandomImagePath(imgArr);
 container.style.backgroundImage = `url('${randomImagePath}')`;
