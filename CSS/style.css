@@ -156,11 +156,11 @@ button:hover {
 
 #list_container li {
   background-color: var(--color-white);
-  color: var(--color-violet);
+  color: var(--color-yellow);
+  font-size: var(--font-size-small);
   padding: calc(var(--padding-size-small) / 2) var(--padding-size-micro);
   margin: calc(var(--margin-size-small) / 2) var(--margin-size-micro);
   border-radius: 8px;
-
   line-height: 1.5;
   display: flex;
   justify-content: space-between;
