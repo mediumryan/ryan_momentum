@@ -1,73 +1,59 @@
-'use strict';
+$(function () {
+  const todoForm = $(".todo_form");
+  const todoInput = $("#todo_input");
+  const listBox = $("#list_container");
 
-const todoForm = document.querySelector('.todo_form');
-const todoInput = document.querySelector('#todo_input');
-const listBox = document.querySelector('#list_container');
+  const TODO_KEY = "todo_items";
 
-const TODO_KEY = 'todos';
+  let todo_items = JSON.parse(localStorage.getItem(TODO_KEY)) || [];
 
-// 로컬스토리지에서 할 일 리스트 불러오기
-let todos = JSON.parse(localStorage.getItem(TODO_KEY)) || [];
+  function saveTodo() {
+    localStorage.setItem(TODO_KEY, JSON.stringify(todo_items));
+  }
 
-// 할 일 삭제 후 로컬스토리지에 저장하기
-function saveTodos() {
-localStorage.setItem(TODO_KEY, JSON.stringify(todos));
-}
+  function deleteTodo(index) {
+    todo_items.splice(index, 1);
+    saveTodo();
+  }
 
-// 할 일 삭제하기
-function deleteTodo (index) {
-todos.splice(index, 1);
-saveTodos();
-}
+  function handleDeleteBtn() {
+    const list = $(this).parent();
+    const index = todo_items.findIndex((todo) => todo.id === list.attr("id"));
+    deleteTodo(index);
+    list.remove();
+  }
 
-// 할 일 삭제 버튼 핸들러
-function handleDeleteBtn (e) {
-const list = e.target.parentNode;
-const index = todos.findIndex(todo => todo.id === list.id);
-deleteTodo (index);
-list.remove();
-}
+  function createTodo(todoValue) {
+    const id = Date.now().toString();
+    const listItem = $("<li>").attr("id", id);
+    const listValue = $("<span>").text(todoValue);
+    const deleteBtn = $("<button>").text("🗑️").click(handleDeleteBtn);
 
-// 할 일 생성하기
-function createTodo (todoValue) {
-const listItem = document.createElement('li');
-const listValue = document.createElement('span');
-const deleteBtn = document.createElement('button');
-const id = Date.now().toString();
+    listItem.append(listValue);
+    listItem.append(deleteBtn);
+    listBox.append(listItem);
 
-listValue.textContent = todoValue;
-deleteBtn.textContent = '🗑️';
-deleteBtn.addEventListener('click', handleDeleteBtn);
+    const newTodo = { id, value: todoValue };
+    todo_items.push(newTodo);
+    saveTodo();
+  }
 
-listItem.appendChild(listValue);
-listItem.appendChild(deleteBtn);
-listItem.id = id;
-listBox.appendChild(listItem);
+  function handleTodoSubmit(e) {
+    e.preventDefault();
+    const todoValue = todoInput.val().trim();
+    if (todoValue === "") return;
+    createTodo(todoValue);
+    todoInput.val("");
+    todoInput.focus();
+  }
 
-const newTodo = { id, value: todoValue };
-todos.push(newTodo);
-saveTodos();
-}
+  function loadTodo() {
+    todo_items.forEach((todo) => createTodo(todo.value));
+  }
 
-// 서브밋 핸들러
-function handleTodoSubmit (e) {
-e.preventDefault();
-const todoValue = todoInput.value.trim();
-if (todoValue === '') return;
-createTodo (todoValue);
-todoInput.value = '';
-todoInput.focus();
-}
+  todoForm.submit(handleTodoSubmit);
 
-// 초기 할 일 목록 불러오기
-function loadTodos () {
-todos.forEach(todo => createTodo (todo.value));
-}
-
-// 이벤트 리스너
-todoForm.addEventListener('submit', handleTodoSubmit);
-
-// 새로고침 방지
-if (todos.length !== 0) {
-loadTodos();
-}
+  if (todo_items.length !== 0) {
+    loadTodo();
+  }
+});
