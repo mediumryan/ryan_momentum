@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 import './CSS/index.css';
 import Bg from './Components/bg/Bg';
 import WeatherClock from './Components/weatherClock/WeatherClock';
+import Greeting from './Components/greeting/Greeting';
 const MainWrapper = styled.div`
     position: relative;
     display: flex;
@@ -16,6 +17,7 @@ function App() {
         <MainWrapper>
             <Bg />
             <WeatherClock />
+            <Greeting />
         </MainWrapper>
     );
 }

@@ -11,7 +11,6 @@ const WeatherClockWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     color: var(--primary-200);
-    font-size: var(--font-size-medium);
     padding: 0 var(--padding-large);
 `;
 

@@ -1,4 +1,5 @@
 import { atom, selector } from 'recoil';
+import { recoilPersist } from 'recoil-persist';
 // import background images
 import bg1 from './Images/1.jpg';
 import bg2 from './Images/2.jpg';
@@ -10,6 +11,8 @@ import bg7 from './Images/7.jpg';
 import bg8 from './Images/8.jpg';
 import bg9 from './Images/9.jpg';
 import bg10 from './Images/10.jpg';
+
+const { persistAtom } = recoilPersist();
 
 // about bg
 export const bgState = atom({
@@ -69,4 +72,15 @@ export const randomBg = selector({
 export const timeState = atom({
     key: 'time',
     default: new Date(Date.now()),
+});
+// about greeting
+export const isNameState = atom({
+    key: 'is_name',
+    default: false,
+    effects_UNSTABLE: [persistAtom],
+});
+export const nameState = atom({
+    key: 'name',
+    default: '',
+    effects_UNSTABLE: [persistAtom],
 });
