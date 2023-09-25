@@ -4,15 +4,15 @@ import { isNameState, nameState } from '../../atom';
 import { useForm } from 'react-hook-form';
 
 const GreetingWrapper = styled.div`
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    font-size: 48px;
+    margin: calc(var(--margin-very-large) * 2) 0 var(--margin-large) 0;
     color: white;
-    transform: translateX(-50%);
-    h2 {
-        margin-bottom: var(--margin-large);
-    }
+`;
+
+const GreetingHello = styled.h2`
+    font-size: var(--font-size-large);
+    margin-bottom: var(--margin-large);
+    color: var(--primary-100);
+    font-weight: 800;
 `;
 
 const GreetingForm = styled.form`
@@ -55,7 +55,9 @@ export default function Greeting() {
 
     return (
         <GreetingWrapper>
-            <h2>{isName ? `Hello, ${name}` : 'What is your name?'}</h2>
+            <GreetingHello>
+                {isName ? `Hello, ${name}` : 'What is your name?'}
+            </GreetingHello>
             {isName ? null : (
                 <GreetingForm onSubmit={handleSubmit(submitName)}>
                     <GreetingInput {...register('name', { required: true })} />
