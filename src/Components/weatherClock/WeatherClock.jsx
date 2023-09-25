@@ -7,10 +7,12 @@ const WeatherClockWrapper = styled.div`
     top: 5%;
     left: 0;
     width: 100%;
-    background-color: red;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--primary-200);
+    font-size: var(--font-size-medium);
+    padding: 0 var(--padding-large);
 `;
 
 export default function WeatherClock() {
