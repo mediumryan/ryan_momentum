@@ -148,3 +148,8 @@ export const randomQuotes = selector({
         return quotes[randomInt];
     },
 });
+// about todo
+export const categories = atom({
+    key: 'categories',
+    default: ['TO_DO', 'DOING', 'DONE'],
+});

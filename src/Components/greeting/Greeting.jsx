@@ -4,6 +4,7 @@ import { isNameState, nameState } from '../../atom';
 import { useForm } from 'react-hook-form';
 
 const GreetingWrapper = styled.div`
+    flex-basis: 15%;
     margin: calc(var(--margin-very-large) * 2) 0 var(--margin-large) 0;
 `;
 
