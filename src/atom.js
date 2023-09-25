@@ -11,6 +11,7 @@ import bg8 from './Images/8.jpg';
 import bg9 from './Images/9.jpg';
 import bg10 from './Images/10.jpg';
 
+// about bg
 export const bgState = atom({
     key: 'bg_image',
     default: [
@@ -56,7 +57,6 @@ export const bgState = atom({
         },
     ],
 });
-
 export const randomBg = selector({
     key: 'random_bg',
     get: ({ get }) => {
@@ -64,4 +64,9 @@ export const randomBg = selector({
         const randomInt = Math.floor(Math.random(bg.length) * 10);
         return bg[randomInt];
     },
+});
+// about clock
+export const timeState = atom({
+    key: 'time',
+    default: new Date(Date.now()),
 });
