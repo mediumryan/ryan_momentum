@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 
 const GreetingWrapper = styled.div`
     margin: calc(var(--margin-very-large) * 2) 0 var(--margin-large) 0;
-    color: white;
 `;
 
 const GreetingHello = styled.h2`

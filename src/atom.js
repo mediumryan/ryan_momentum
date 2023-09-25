@@ -15,7 +15,7 @@ import bg10 from './Images/10.jpg';
 const { persistAtom } = recoilPersist();
 
 // about bg
-export const bgState = atom({
+const bgState = atom({
     key: 'bg_image',
     default: [
         {
@@ -77,15 +77,15 @@ export const timeState = atom({
 export const isNameState = atom({
     key: 'is_name',
     default: false,
-    effects_UNSTABLE: [persistAtom],
+    // effects_UNSTABLE: [persistAtom],
 });
 export const nameState = atom({
     key: 'name',
     default: '',
-    effects_UNSTABLE: [persistAtom],
+    // effects_UNSTABLE: [persistAtom],
 });
 //about quotes
-export const quotesState = atom({
+const quotesState = atom({
     key: 'quotes',
     default: [
         {
@@ -139,4 +139,12 @@ export const quotesState = atom({
             author: 'Jim Rohn',
         },
     ],
+});
+export const randomQuotes = selector({
+    key: 'random_quotes',
+    get: ({ get }) => {
+        const quotes = get(quotesState);
+        const randomInt = Math.floor(Math.random(quotes.length) * 10);
+        return quotes[randomInt];
+    },
 });
