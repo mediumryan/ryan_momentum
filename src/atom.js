@@ -77,12 +77,12 @@ export const timeState = atom({
 export const isNameState = atom({
     key: 'is_name',
     default: false,
-    // effects_UNSTABLE: [persistAtom],
+    effects_UNSTABLE: [persistAtom],
 });
 export const nameState = atom({
     key: 'name',
     default: '',
-    // effects_UNSTABLE: [persistAtom],
+    effects_UNSTABLE: [persistAtom],
 });
 //about quotes
 const quotesState = atom({
@@ -152,8 +152,10 @@ export const randomQuotes = selector({
 export const categoryState = atom({
     key: 'categories',
     default: ['TO_DO', 'DOING', 'DONE'],
+    effects_UNSTABLE: [persistAtom],
 });
 export const todoState = atom({
     key: 'todo_state',
     default: [],
+    effects_UNSTABLE: [persistAtom],
 });

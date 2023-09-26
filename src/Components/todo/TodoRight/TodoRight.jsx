@@ -14,8 +14,14 @@ const TodoRightWrapper = styled.div`
 const TodoTitle = styled.h4`
     font-size: var(--font-size-medium);
     font-weight: 800;
-    margin-bottom: var(--margin-medium);
+    margin-bottom: var(--margin-large);
     color: var(--primary-100);
+`;
+
+const NoTask = styled.p`
+    font-size: var(--font-size-medium);
+    color: var(--accent-200);
+    margin-top: var(--margin-medium);
 `;
 
 const TodoItems = styled.div`
@@ -31,11 +37,13 @@ export default function TodoRight() {
         <TodoRightWrapper>
             <TodoTitle>What will you want to do?</TodoTitle>
             {todo.length < 1 ? (
-                <p>'There is no task'</p>
+                <NoTask>'There is no task'</NoTask>
             ) : (
                 <TodoItems>
-                    {todo.map((item) => {
-                        return <TodoItem key={item.id} item={item} />;
+                    {todo.map((item, index) => {
+                        return (
+                            <TodoItem key={item.id} item={item} index={index} />
+                        );
                     })}
                 </TodoItems>
             )}
