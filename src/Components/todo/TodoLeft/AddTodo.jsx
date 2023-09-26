@@ -1,4 +1,7 @@
+import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
+import { todoState } from '../../../atom';
+import { useForm } from 'react-hook-form';
 
 export const AddsWrapper = styled.div`
     display: flex;
@@ -10,6 +13,7 @@ export const AddsWrapper = styled.div`
 export const AddsLabel = styled.label`
     color: var(--primary-200);
     margin: var(--margin-medium) 0;
+    font-size: var(--font-size-small);
 `;
 
 export const AddsForm = styled.form`
@@ -21,6 +25,7 @@ export const AddsInput = styled.input`
     font-size: var(--font-size-micro);
     margin-right: var(--margin-small);
     padding: var(--padding-double-small);
+    border: none;
     border-radius: 10px;
 `;
 
@@ -32,17 +37,29 @@ export const AddsSubmit = styled.button`
     border-radius: 10px;
     transition: 300ms all;
     &:hover {
-        color: var(--primary-200);
-        border-color: var(--primary-200);
+        color: var(--primary-100);
+        border-color: var(--primary-100);
     }
 `;
 
 export default function AddTodo() {
+    // state
+    const [todo, setTodo] = useRecoilState(todoState);
+    // form
+    const { register, handleSubmit, setValue } = useForm();
+    const submitValue = (data) => {
+        setTodo([
+            ...todo,
+            { text: data.todo, id: Date.now(), checked: false, state: 'TO_DO' },
+        ]);
+        setValue('todo', '');
+    };
+
     return (
         <AddsWrapper>
             <AddsLabel>Add ToDo</AddsLabel>
-            <AddsForm>
-                <AddsInput />
+            <AddsForm onSubmit={handleSubmit(submitValue)}>
+                <AddsInput {...register('todo', { required: true })} />
                 <AddsSubmit>Submit</AddsSubmit>
             </AddsForm>
         </AddsWrapper>

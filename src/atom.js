@@ -149,7 +149,11 @@ export const randomQuotes = selector({
     },
 });
 // about todo
-export const categories = atom({
+export const categoryState = atom({
     key: 'categories',
     default: ['TO_DO', 'DOING', 'DONE'],
+});
+export const todoState = atom({
+    key: 'todo_state',
+    default: [],
 });
