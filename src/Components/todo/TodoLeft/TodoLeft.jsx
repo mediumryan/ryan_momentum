@@ -9,6 +9,9 @@ const TodoLeftWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        margin: 0 var(--margin-medium);
+    }
 `;
 
 export default function TodoLeft() {

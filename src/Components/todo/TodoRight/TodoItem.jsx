@@ -23,6 +23,9 @@ const ItemText = styled.span`
 `;
 
 const ItemBtnBox = styled.div`
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     flex-basis: 50%;
     display: flex;
     justify-content: space-evenly;

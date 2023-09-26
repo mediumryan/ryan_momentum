@@ -11,6 +11,9 @@ const CategoryBox = styled.div`
     border: 2px solid var(--text-100);
     border-radius: 10px;
     padding: var(--padding-double-medium);
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        max-height: 240px;
+    }
 `;
 
 const Category = styled.button`

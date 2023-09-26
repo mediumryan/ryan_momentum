@@ -9,6 +9,9 @@ const TodoRightWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        margin: 0 var(--margin-medium);
+    }
 `;
 
 const TodoTitle = styled.h4`
@@ -20,7 +23,7 @@ const TodoTitle = styled.h4`
 
 const NoTask = styled.p`
     font-size: var(--font-size-medium);
-    color: var(--accent-200);
+    color: var(--accent-100);
     margin-top: var(--margin-medium);
 `;
 

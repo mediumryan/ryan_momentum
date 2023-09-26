@@ -23,7 +23,7 @@ export default function Clock() {
 
     return (
         <ClockWrapper>
-            <p>{time.toLocaleTimeString('ja-JP')}</p>
+            <p>{time.toLocaleTimeString('ko-KR')}</p>
         </ClockWrapper>
     );
 }

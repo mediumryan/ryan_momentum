@@ -7,10 +7,11 @@ const QuotesWrapper = styled.div`
     flex-basis: 15%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 50%;
     padding: var(--padding-double-medium);
+    margin-bottom: var(--margin-large);
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
