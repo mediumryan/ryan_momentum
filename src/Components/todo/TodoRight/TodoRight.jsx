@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import TodoItem from './TodoItem';
 import { useRecoilValue } from 'recoil';
-import { todoState } from '../../../atom';
+import { filteredTodo, nowCategory } from '../../../atom';
 
 const TodoRightWrapper = styled.div`
     flex-basis: 60%;
@@ -31,13 +31,14 @@ const TodoItems = styled.div`
 `;
 
 export default function TodoRight() {
-    const todo = useRecoilValue(todoState);
+    const todo = useRecoilValue(filteredTodo);
+    const nowCat = useRecoilValue(nowCategory);
 
     return (
         <TodoRightWrapper>
             <TodoTitle>What will you want to do?</TodoTitle>
             {todo.length < 1 ? (
-                <NoTask>'There is no task'</NoTask>
+                <NoTask>'{nowCat} Category is empty'</NoTask>
             ) : (
                 <TodoItems>
                     {todo.map((item, index) => {

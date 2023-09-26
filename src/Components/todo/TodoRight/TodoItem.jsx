@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import { FaTrashAlt } from 'react-icons/fa';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { categoryState, todoState } from '../../../atom';
 
 const TodoItemWrapper = styled.div`
@@ -41,19 +41,29 @@ const ItemBtn = styled.button`
 
 export default function TodoItems({ item, index }) {
     // category button filter
-    const [category, setCategory] = useRecoilState(categoryState);
+    const category = useRecoilValue(categoryState);
     const newCategory = category.filter((i) => i !== item.state);
-    // change item category
-    const changeCategory = (e) => {
-        const toChange = e.target.textContent;
-        const newItem = { id: item.id, text: item.text, state: toChange };
-        setTodo([...todo.slice(0, index), newItem, ...todo.slice(index + 1)]);
-    };
     // delete item
     const [todo, setTodo] = useRecoilState(todoState);
     const deleteItem = () => {
         const newTodo = todo.filter((i) => i.id !== item.id);
         setTodo(newTodo);
+    };
+    // change item category
+    const targetIndex = todo.findIndex((i) => i.id === item.id);
+    const changeCategory = (e) => {
+        const toChange = e.target.textContent;
+        const newItem = {
+            text: item.text,
+            id: item.id,
+            checked: false,
+            state: toChange,
+        };
+        setTodo([
+            ...todo.slice(0, targetIndex),
+            newItem,
+            ...todo.slice(targetIndex + 1),
+        ]);
     };
 
     return (

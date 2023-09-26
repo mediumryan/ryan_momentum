@@ -68,11 +68,13 @@ export const randomBg = selector({
         return bg[randomInt];
     },
 });
+
 // about clock
 export const timeState = atom({
     key: 'time',
     default: new Date(Date.now()),
 });
+
 // about greeting
 export const isNameState = atom({
     key: 'is_name',
@@ -84,6 +86,7 @@ export const nameState = atom({
     default: '',
     effects_UNSTABLE: [persistAtom],
 });
+
 //about quotes
 const quotesState = atom({
     key: 'quotes',
@@ -148,7 +151,13 @@ export const randomQuotes = selector({
         return quotes[randomInt];
     },
 });
+
 // about todo
+export const nowCategory = atom({
+    key: 'now_category',
+    default: 'TO_DO',
+    effects_UNSTABLE: [persistAtom],
+});
 export const categoryState = atom({
     key: 'categories',
     default: ['TO_DO', 'DOING', 'DONE'],
@@ -158,4 +167,14 @@ export const todoState = atom({
     key: 'todo_state',
     default: [],
     effects_UNSTABLE: [persistAtom],
+});
+
+// filtered todo
+export const filteredTodo = selector({
+    key: 'filtered_todo',
+    get: ({ get }) => {
+        const now = get(nowCategory);
+        const todo = get(todoState);
+        return todo.filter((a) => a.state === now);
+    },
 });

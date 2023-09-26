@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { AddsLabel, AddsWrapper } from './AddTodo';
 import { useRecoilState } from 'recoil';
-import { categoryState } from '../../../atom';
+import { categoryState, nowCategory } from '../../../atom';
 import { FaTrashAlt } from 'react-icons/fa';
 
 const CategoryBox = styled.div`
@@ -21,11 +21,6 @@ const Category = styled.button`
     color: var(--text-100);
     font-size: var(--font-size-micro);
     margin: var(--margin-small) 0;
-    span {
-        &:hover {
-            color: var(--primary-200);
-        }
-    }
     svg {
         margin-left: var(--margin-small);
         &:hover {
@@ -36,10 +31,15 @@ const Category = styled.button`
 
 export default function Categories() {
     const [category, setCategory] = useRecoilState(categoryState);
+    const [nowCat, setNowCat] = useRecoilState(nowCategory);
     // deleteCategory
     const deleteCategory = (cat) => {
         const newCat = category.filter((i) => i !== cat);
         setCategory(newCat);
+    };
+    // change now category
+    const changeNowCat = (cat) => {
+        setNowCat(cat);
     };
 
     return (
@@ -49,7 +49,17 @@ export default function Categories() {
                 {category.map((cat, index) => {
                     return (
                         <Category key={index}>
-                            <span>{cat}</span>
+                            <span
+                                onClick={() => {
+                                    changeNowCat(cat);
+                                }}
+                                style={{
+                                    color:
+                                        nowCat === cat ? '#ff983f' : '#ffffff',
+                                }}
+                            >
+                                {cat}
+                            </span>
                             <FaTrashAlt
                                 onClick={() => {
                                     deleteCategory(cat);
