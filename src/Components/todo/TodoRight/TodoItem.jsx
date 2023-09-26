@@ -31,8 +31,8 @@ const ItemBtnBox = styled.div`
 
 const ItemBtn = styled.button`
     color: var(--text-100);
-    font-size: var(--font-size-small);
-    padding: var(--padding-double-medium);
+    font-size: var(--font-size-micro);
+    padding: var(--padding-double-small);
     border-radius: 4px;
     &:hover {
         color: var(--primary-100);

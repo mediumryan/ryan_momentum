@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import { AddsLabel, AddsWrapper } from './AddTodo';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { categoryState } from '../../../atom';
 
 const CategoryBox = styled.div`
@@ -19,7 +19,12 @@ const Category = styled.button`
 `;
 
 export default function Categories() {
-    const category = useRecoilValue(categoryState);
+    const [category, setCategory] = useRecoilState(categoryState);
+    // deleteCategory
+    const deleteCategory = (cat) => {
+        const newCat = category.filter((i) => i !== cat);
+        setCategory(newCat);
+    };
 
     return (
         <AddsWrapper>
@@ -27,7 +32,12 @@ export default function Categories() {
             <CategoryBox>
                 {category.map((cat, index) => {
                     return (
-                        <Category key={index} type="button">
+                        <Category
+                            key={index}
+                            onClick={() => {
+                                deleteCategory(cat);
+                            }}
+                        >
                             {cat}
                         </Category>
                     );
