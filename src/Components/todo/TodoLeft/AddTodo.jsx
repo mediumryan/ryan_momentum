@@ -43,11 +43,22 @@ export const AddsSubmit = styled.button`
     }
 `;
 
+export const InputAlert = styled.p`
+    color: var(--accent-100);
+    font-size: var(--font-size-micro);
+    margin-top: var(--margin-small);
+`;
+
 export default function AddTodo() {
     // state
     const [todo, setTodo] = useRecoilState(todoState);
     // form
-    const { register, handleSubmit, setValue } = useForm();
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors },
+    } = useForm();
     const submitValue = (data) => {
         setTodo([
             ...todo,
@@ -60,9 +71,16 @@ export default function AddTodo() {
         <AddsWrapper>
             <AddsLabel>Add ToDo</AddsLabel>
             <AddsForm onSubmit={handleSubmit(submitValue)}>
-                <AddsInput {...register('todo', { required: true })} />
+                <AddsInput
+                    {...register('todo', { required: true, maxLength: 15 })}
+                />
                 <AddsSubmit>Submit</AddsSubmit>
             </AddsForm>
+            {errors.todo && errors.todo.type === 'maxLength' && (
+                <InputAlert>
+                    Please enter the todo within 15 characters.
+                </InputAlert>
+            )}
         </AddsWrapper>
     );
 }
