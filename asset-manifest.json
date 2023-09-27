@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/momemtum_clone/static/css/main.68504bbb.css",
+    "main.js": "/momemtum_clone/static/js/main.b560631a.js",
+    "static/media/2.jpg": "/momemtum_clone/static/media/2.b772a94291bfe7e00149.jpg",
+    "static/media/5.jpg": "/momemtum_clone/static/media/5.b6205f0ff0e928c2fa93.jpg",
+    "static/media/6.jpg": "/momemtum_clone/static/media/6.bbe6200da9569f52d6d7.jpg",
+    "static/media/4.jpg": "/momemtum_clone/static/media/4.dc05650e268f16b42639.jpg",
+    "static/media/10.jpg": "/momemtum_clone/static/media/10.84f14d9b5a7a5cf8bb32.jpg",
+    "static/media/3.jpg": "/momemtum_clone/static/media/3.d7079f0138bd45f708a9.jpg",
+    "static/media/1.jpg": "/momemtum_clone/static/media/1.cc094ea8ab4b87b2542a.jpg",
+    "static/media/9.jpg": "/momemtum_clone/static/media/9.d0b132a712a2c811f46f.jpg",
+    "static/media/7.jpg": "/momemtum_clone/static/media/7.5ba8c0ec2b7e3f15429c.jpg",
+    "static/media/8.jpg": "/momemtum_clone/static/media/8.66df9362ed76f0550c50.jpg",
+    "index.html": "/momemtum_clone/index.html",
+    "main.68504bbb.css.map": "/momemtum_clone/static/css/main.68504bbb.css.map",
+    "main.b560631a.js.map": "/momemtum_clone/static/js/main.b560631a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68504bbb.css",
+    "static/js/main.b560631a.js"
+  ]
+}
