@@ -2,7 +2,7 @@
     "name": "momentum_clone",
     "version": "0.1.0",
     "private": true,
-    "homepage": "http://mediumryan.github.io/momemtum_clone/",
+    "homepage": "http://mediumryan.github.io/ryan_momentum/",
     "dependencies": {
         "@tanstack/react-query": "^4.35.3",
         "@testing-library/jest-dom": "^5.17.0",
