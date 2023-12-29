@@ -10,7 +10,6 @@ const TodoWrapper = styled.div`
     align-items: center;
     width: 95%;
     padding: var(--padding-medium) var(--padding-large);
-    /* From https://css.glass */
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

@@ -4,7 +4,7 @@ import Clock from './Clock';
 
 const WeatherClockWrapper = styled.div`
     position: absolute;
-    top: 5%;
+    top: 1%;
     left: 0;
     width: 100%;
     display: flex;

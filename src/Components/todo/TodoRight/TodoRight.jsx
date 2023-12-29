@@ -39,7 +39,7 @@ export default function TodoRight() {
 
     return (
         <TodoRightWrapper>
-            <TodoTitle>What will you want to do?</TodoTitle>
+            <TodoTitle>Todo List</TodoTitle>
             {todo.length < 1 ? (
                 <NoTask>'{nowCat} Category is empty'</NoTask>
             ) : (
