@@ -1,6 +1,6 @@
 import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
-import { timeState } from '../../atom';
+import { timeState } from '../../data/clock';
 import { useEffect } from 'react';
 
 const ClockWrapper = styled.div`

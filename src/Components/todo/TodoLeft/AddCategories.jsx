@@ -8,7 +8,7 @@ import {
     InputAlert,
 } from './AddTodo';
 import { useRecoilState } from 'recoil';
-import { categoryState } from '../../../atom';
+import { categoryState } from '../../../data/todos';
 import { useForm } from 'react-hook-form';
 
 export default function AddCategories() {

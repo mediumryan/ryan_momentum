@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { randomQuotes } from '../../atom';
+import { randomQuotes } from '../../data/quotes';
 import { styled } from 'styled-components';
 
 const QuotesWrapper = styled.div`

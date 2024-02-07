@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
-import { randomBg } from '../../atom';
+import { randomBg } from '../../data/bg';
 
 const BgImg = styled.img`
     position: absolute;

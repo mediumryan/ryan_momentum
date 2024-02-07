@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { AddsLabel, AddsWrapper } from './AddTodo';
 import { useRecoilState } from 'recoil';
-import { categoryState, nowCategory } from '../../../atom';
+import { categoryState, nowCategory } from '../../../data/todos';
 import { FaTrashAlt } from 'react-icons/fa';
 
 const CategoryBox = styled.div`

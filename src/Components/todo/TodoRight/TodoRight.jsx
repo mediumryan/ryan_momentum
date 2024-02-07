@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import TodoItem from './TodoItem';
 import { useRecoilValue } from 'recoil';
-import { filteredTodo, nowCategory } from '../../../atom';
+import { filteredTodo, nowCategory } from '../../../data/todos';
 
 const TodoRightWrapper = styled.div`
     flex-basis: 60%;

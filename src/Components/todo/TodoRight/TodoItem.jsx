@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { FaTrashAlt } from 'react-icons/fa';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { categoryState, todoState } from '../../../atom';
+import { categoryState, todoState } from '../../../data/todos';
 
 const TodoItemWrapper = styled.div`
     display: flex;

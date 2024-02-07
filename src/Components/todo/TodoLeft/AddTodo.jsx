@@ -1,6 +1,6 @@
 import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
-import { todoState } from '../../../atom';
+import { todoState } from '../../../data/todos';
 import { useForm } from 'react-hook-form';
 
 export const AddsWrapper = styled.div`

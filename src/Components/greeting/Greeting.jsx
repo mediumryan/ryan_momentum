@@ -1,6 +1,6 @@
 import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
-import { isNameState, nameState } from '../../atom';
+import { isNameState, nameState } from '../../data/greeting';
 import { useForm } from 'react-hook-form';
 
 const GreetingWrapper = styled.div`
