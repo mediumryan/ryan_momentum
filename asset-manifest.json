@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ryan_momentum/static/css/main.68504bbb.css",
-    "main.js": "/ryan_momentum/static/js/main.07141799.js",
+    "main.css": "/ryan_momentum/static/css/main.effc4e81.css",
+    "main.js": "/ryan_momentum/static/js/main.cf3b55e0.js",
     "static/media/2.jpg": "/ryan_momentum/static/media/2.b772a94291bfe7e00149.jpg",
     "static/media/5.jpg": "/ryan_momentum/static/media/5.b6205f0ff0e928c2fa93.jpg",
     "static/media/6.jpg": "/ryan_momentum/static/media/6.bbe6200da9569f52d6d7.jpg",
@@ -13,11 +13,11 @@
     "static/media/7.jpg": "/ryan_momentum/static/media/7.5ba8c0ec2b7e3f15429c.jpg",
     "static/media/8.jpg": "/ryan_momentum/static/media/8.66df9362ed76f0550c50.jpg",
     "index.html": "/ryan_momentum/index.html",
-    "main.68504bbb.css.map": "/ryan_momentum/static/css/main.68504bbb.css.map",
-    "main.07141799.js.map": "/ryan_momentum/static/js/main.07141799.js.map"
+    "main.effc4e81.css.map": "/ryan_momentum/static/css/main.effc4e81.css.map",
+    "main.cf3b55e0.js.map": "/ryan_momentum/static/js/main.cf3b55e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.68504bbb.css",
-    "static/js/main.07141799.js"
+    "static/css/main.effc4e81.css",
+    "static/js/main.cf3b55e0.js"
   ]
 }
