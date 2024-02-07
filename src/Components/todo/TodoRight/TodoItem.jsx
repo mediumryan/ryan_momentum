@@ -1,44 +1,42 @@
 import { styled } from 'styled-components';
-import { FaTrashAlt } from 'react-icons/fa';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { categoryState, todoState } from '../../../data/todos';
+// import state data
+import { categoryState, todoState } from '../../../data/todo';
+// import icons
+import { FaTrashAlt } from 'react-icons/fa';
 
 const TodoItemWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
-    color: var(--text-100);
-    padding: var(--padding-double-medium);
-    border: 2px solid var(--text-100);
+    width: 95%;
+    font-size: 0.85rem;
+    padding: 1rem 2rem;
+    margin: 0.5rem 0;
+    border: 2px solid var(--white-100);
     border-radius: 10px;
-    margin-bottom: var(--margin-small);
 `;
 
 const ItemText = styled.span`
     flex-basis: 50%;
     text-align: center;
-    font-size: var(--font-size-small);
-    color: var(--primary-100);
+    color: var(--accent-200);
 `;
 
 const ItemBtnBox = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     flex-basis: 50%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 `;
 
 const ItemBtn = styled.button`
-    color: var(--text-100);
-    font-size: var(--font-size-micro);
-    padding: var(--padding-double-small);
-    border-radius: 4px;
+    color: var(--white-100);
+    padding: 0.5rem;
+    transition: 300ms color;
     &:hover {
-        color: var(--primary-100);
+        color: var(--accent-200);
     }
 `;
 

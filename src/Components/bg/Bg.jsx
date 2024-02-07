@@ -1,5 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { styled } from 'styled-components';
+// import state data
 import { randomBg } from '../../data/bg';
 
 const BgImg = styled.img`
@@ -8,7 +9,6 @@ const BgImg = styled.img`
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.85;
     z-index: -1;
 `;
 

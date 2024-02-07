@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+// import components
 import AddTodo from './AddTodo';
 import AddCategories from './AddCategories';
 import Categories from './Categories';

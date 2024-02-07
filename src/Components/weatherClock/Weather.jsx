@@ -1,24 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
 import { useGeolocation } from '@uidotdev/usehooks';
-import React, { useEffect } from 'react';
-import { fetchData } from '../../api';
 import { styled } from 'styled-components';
+import { useEffect } from 'react';
+// import data
+import { fetchData } from '../../api';
 
 const WeatherWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: var(--padding-double-medium);
-    font-size: var(--font-size-small);
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-    cursor: default;
-    p {
-        margin: var(--margin-medium) 0;
+    align-items: start;
+    padding: 1rem 2rem;
+    color: var(--white-200);
+    p:nth-child(2) {
+        margin: 0.5rem 0;
     }
 `;
 

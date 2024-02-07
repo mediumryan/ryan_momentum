@@ -1,43 +1,50 @@
 import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
-import { isNameState, nameState } from '../../data/greeting';
 import { useForm } from 'react-hook-form';
+// import state data
+import { isNameState, nameState } from '../../data/greeting';
 
 const GreetingWrapper = styled.div`
-    flex-basis: 15%;
-    margin: calc(var(--margin-very-large) * 2) 0 var(--margin-large) 0;
+    flex-basis: 10%;
 `;
 
 const GreetingHello = styled.h2`
-    font-size: var(--font-size-large);
-    margin-bottom: var(--margin-large);
-    color: var(--primary-100);
+    font-size: 2.5rem;
+    color: var(--accent-100);
     font-weight: 800;
+    margin-bottom: 1rem;
 `;
 
 const GreetingForm = styled.form`
     width: 100%;
+    display: flex;
 `;
 
 const GreetingInput = styled.input`
     width: 75%;
-    font-size: var(--font-size-medium);
-    padding: var(--padding-double-small);
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 4px;
     border: none;
+    &:focus {
+        outline-color: var(--accent-100);
+    }
 `;
 
 const GreetingSubmit = styled.button`
-    font-size: var(--font-size-medium);
-    padding: var(--padding-double-small);
-    margin-left: var(--margin-medium);
-    color: var(--text-100);
-    /* From https://css.glass */
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.5rem;
+    color: var(--white-200);
     background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
+    transition: 300ms color;
+    &:hover {
+        color: var(--accent-100);
+    }
 `;
 
 export default function Greeting() {

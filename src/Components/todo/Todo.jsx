@@ -1,15 +1,14 @@
-import React from 'react';
+import { styled } from 'styled-components';
+// import components
 import TodoLeft from './TodoLeft/TodoLeft';
 import TodoRight from './TodoRight/TodoRight';
-import { styled } from 'styled-components';
 
 const TodoWrapper = styled.div`
-    flex-basis: 40%;
+    flex-basis: 60%;
+    width: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;
-    padding: var(--padding-medium) var(--padding-large);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

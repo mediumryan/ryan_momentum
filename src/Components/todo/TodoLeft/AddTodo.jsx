@@ -1,7 +1,8 @@
 import { useRecoilState } from 'recoil';
 import { styled } from 'styled-components';
-import { todoState } from '../../../data/todos';
 import { useForm } from 'react-hook-form';
+// import state data
+import { todoState } from '../../../data/todo';
 
 export const AddsWrapper = styled.div`
     display: flex;
@@ -9,12 +10,12 @@ export const AddsWrapper = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    font-size: 0.85rem;
 `;
 
 export const AddsLabel = styled.label`
-    color: var(--primary-200);
-    margin: var(--margin-medium) 0;
-    font-size: var(--font-size-small);
+    color: var(--white-200);
+    margin: 1rem 0;
 `;
 
 export const AddsForm = styled.form`
@@ -23,30 +24,25 @@ export const AddsForm = styled.form`
 `;
 
 export const AddsInput = styled.input`
-    font-size: var(--font-size-micro);
-    margin-right: var(--margin-small);
-    padding: var(--padding-double-small);
-    border: none;
-    border-radius: 10px;
-`;
-
-export const AddsSubmit = styled.button`
-    font-size: var(--font-size-micro);
-    color: var(--text-200);
-    padding: var(--padding-double-small);
-    border: 2px solid var(--text-200);
-    border-radius: 10px;
-    transition: 300ms all;
-    &:hover {
-        color: var(--primary-100);
-        border-color: var(--primary-100);
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    &:focus {
+        outline-color: var(--accent-100);
     }
 `;
 
-export const InputAlert = styled.p`
-    color: var(--accent-100);
-    font-size: var(--font-size-micro);
-    margin-top: var(--margin-small);
+export const AddsSubmit = styled.button`
+    color: var(--white-200);
+    padding: 0.25rem 0.5rem;
+    border: 2px solid var(--black-200);
+    border-radius: 4px;
+    transition: 300ms all;
+    &:hover {
+        color: var(--accent-100);
+        border-color: var(--accent-100);
+    }
 `;
 
 export default function AddTodo() {
@@ -69,18 +65,13 @@ export default function AddTodo() {
 
     return (
         <AddsWrapper>
-            <AddsLabel>Add ToDo</AddsLabel>
+            <AddsLabel>Add to task</AddsLabel>
             <AddsForm onSubmit={handleSubmit(submitValue)}>
                 <AddsInput
-                    {...register('todo', { required: true, maxLength: 15 })}
+                    {...register('todo', { required: true, maxLength: 50 })}
                 />
                 <AddsSubmit>Submit</AddsSubmit>
             </AddsForm>
-            {errors.todo && errors.todo.type === 'maxLength' && (
-                <InputAlert>
-                    Please enter the todo within 15 characters.
-                </InputAlert>
-            )}
         </AddsWrapper>
     );
 }

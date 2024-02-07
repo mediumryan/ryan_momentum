@@ -1,16 +1,17 @@
 import { styled } from 'styled-components';
-import { AddsLabel, AddsWrapper } from './AddTodo';
 import { useRecoilState } from 'recoil';
-import { categoryState, nowCategory } from '../../../data/todos';
+// import components
+import { AddsLabel, AddsWrapper } from './AddTodo';
+// import state data
+import { categoryState, nowCategory } from '../../../data/todo';
+// import icons
 import { FaTrashAlt } from 'react-icons/fa';
 
 const CategoryBox = styled.div`
-    width: 75%;
-    max-height: 120px;
+    width: 60%;
+    max-height: 240px;
+    padding: 1rem;
     overflow-y: scroll;
-    border: 2px solid var(--text-100);
-    border-radius: 10px;
-    padding: var(--padding-double-medium);
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
         max-height: 240px;
     }
@@ -21,13 +22,11 @@ const Category = styled.button`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--text-100);
-    font-size: var(--font-size-micro);
-    margin: var(--margin-small) 0;
+    margin: 0.5rem 0;
     svg {
-        margin-left: var(--margin-small);
+        transition: 300ms color;
         &:hover {
-            color: var(--primary-100);
+            color: var(--white-200);
         }
     }
 `;
@@ -57,8 +56,7 @@ export default function Categories() {
                                     changeNowCat(cat);
                                 }}
                                 style={{
-                                    color:
-                                        nowCat === cat ? '#ff983f' : '#ffffff',
+                                    color: nowCat === cat ? '#ff983f' : '#fff',
                                 }}
                             >
                                 {cat}

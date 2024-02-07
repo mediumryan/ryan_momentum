@@ -1,15 +1,15 @@
-import React from 'react';
+import { useRecoilState } from 'recoil';
+import { useForm } from 'react-hook-form';
+// import components
 import {
     AddsForm,
     AddsInput,
     AddsLabel,
     AddsSubmit,
     AddsWrapper,
-    InputAlert,
 } from './AddTodo';
-import { useRecoilState } from 'recoil';
-import { categoryState } from '../../../data/todos';
-import { useForm } from 'react-hook-form';
+// import state data
+import { categoryState } from '../../../data/todo';
 
 export default function AddCategories() {
     // form
@@ -32,18 +32,13 @@ export default function AddCategories() {
 
     return (
         <AddsWrapper>
-            <AddsLabel>Add Category</AddsLabel>
+            <AddsLabel>Add to category</AddsLabel>
             <AddsForm onSubmit={handleSubmit(addCategory)}>
                 <AddsInput
-                    {...register('category', { required: true, maxLength: 10 })}
+                    {...register('category', { required: true, maxLength: 50 })}
                 />
                 <AddsSubmit>Submit</AddsSubmit>
             </AddsForm>
-            {errors.category && errors.category.type === 'maxLength' && (
-                <InputAlert>
-                    Please enter the category within 10 characters.
-                </InputAlert>
-            )}
         </AddsWrapper>
     );
 }

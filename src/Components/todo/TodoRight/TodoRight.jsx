@@ -1,35 +1,37 @@
 import { styled } from 'styled-components';
-import TodoItem from './TodoItem';
 import { useRecoilValue } from 'recoil';
-import { filteredTodo, nowCategory } from '../../../data/todos';
+// import components
+import TodoItem from './TodoItem';
+// import state data
+import { filteredTodo, nowCategory } from '../../../data/todo';
 
 const TodoRightWrapper = styled.div`
     flex-basis: 60%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         margin: 0 var(--margin-medium);
     }
 `;
 
 const TodoTitle = styled.h4`
-    font-size: var(--font-size-medium);
-    font-weight: 800;
-    margin-bottom: var(--margin-large);
-    color: var(--primary-100);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
+    color: var(--white-100);
 `;
 
 const NoTask = styled.p`
-    font-size: var(--font-size-medium);
-    color: var(--accent-100);
-    margin-top: var(--margin-medium);
+    font-size: 1.25rem;
+    color: var(--accent-200);
+    margin-top: 4rem;
 `;
 
 const TodoItems = styled.div`
     width: 100%;
-    max-height: 280px;
+    max-height: 400px;
     overflow-y: scroll;
 `;
 
