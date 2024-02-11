@@ -24,6 +24,9 @@ const QuotesWrapper = styled.div`
 
     p.quote {
         margin-bottom: 1rem;
+        @media only screen and (min-width: 320px) and (max-width: 768px) {
+            margin-bottom: 0.5rem;
+        }
     }
 
     p.author {

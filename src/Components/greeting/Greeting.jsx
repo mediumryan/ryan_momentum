@@ -11,8 +11,11 @@ const GreetingWrapper = styled.div`
 const GreetingHello = styled.h2`
     font-size: 2.5rem;
     color: var(--accent-100);
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 1rem;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        margin-top: 2.5rem;
+    }
 `;
 
 const GreetingForm = styled.form`

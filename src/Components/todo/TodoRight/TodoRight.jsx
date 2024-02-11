@@ -12,7 +12,7 @@ const TodoRightWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     @media only screen and (min-width: 320px) and (max-width: 768px) {
-        margin: 0 var(--margin-medium);
+        width: 90%;
     }
 `;
 
@@ -33,6 +33,9 @@ const TodoItems = styled.div`
     width: 100%;
     max-height: 400px;
     overflow-y: scroll;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        max-height: 200px;
+    }
 `;
 
 export default function TodoRight() {

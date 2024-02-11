@@ -14,6 +14,10 @@ const TodoWrapper = styled.div`
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.1px);
     -webkit-backdrop-filter: blur(0.1px);
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        flex-direction: column;
+        width: 95%;
+    }
 `;
 
 export default function Todo() {

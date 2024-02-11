@@ -14,6 +14,9 @@ const WeatherWrapper = styled.div`
     p:nth-child(2) {
         margin: 0.5rem 0;
     }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        padding: 0;
+    }
 `;
 
 export default function Weather() {

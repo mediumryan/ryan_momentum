@@ -12,8 +12,8 @@ const CategoryBox = styled.div`
     max-height: 240px;
     padding: 1rem;
     overflow-y: scroll;
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
-        max-height: 240px;
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        max-height: 100px;
     }
 `;
 

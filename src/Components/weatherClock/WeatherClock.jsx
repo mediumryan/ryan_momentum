@@ -13,6 +13,9 @@ const WeatherClockWrapper = styled.div`
     padding: 0 2rem;
     font-size: 1.05rem;
     color: var(--primary-200);
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        padding: 0 1rem;
+    }
 `;
 
 export default function WeatherClock() {
