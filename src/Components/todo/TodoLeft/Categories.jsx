@@ -15,6 +15,9 @@ const CategoryBox = styled.div`
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         max-height: 100px;
     }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        max-height: 480px;
+    }
 `;
 
 const Category = styled.button`

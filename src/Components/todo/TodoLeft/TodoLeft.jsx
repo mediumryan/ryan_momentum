@@ -3,6 +3,7 @@ import { styled } from 'styled-components';
 import AddTodo from './AddTodo';
 import AddCategories from './AddCategories';
 import Categories from './Categories';
+import DeleteAll from '../Reset/Reset';
 
 const TodoLeftWrapper = styled.div`
     flex-basis: 40%;
@@ -10,9 +11,6 @@ const TodoLeftWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media only screen and (min-width: 320px) and (max-width: 768px) {
-        margin: 0 var(--margin-medium);
-    }
 `;
 
 export default function TodoLeft() {
@@ -20,6 +18,7 @@ export default function TodoLeft() {
         <TodoLeftWrapper>
             <AddTodo />
             <AddCategories />
+            <DeleteAll />
             <Categories />
         </TodoLeftWrapper>
     );

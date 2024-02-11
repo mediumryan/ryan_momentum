@@ -32,10 +32,17 @@ const QuotesWrapper = styled.div`
     p.author {
         color: var(--white-100);
         font-size: 0.75rem;
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+            font-size: 1rem;
+        }
     }
 
     @media only screen and (min-width: 320px) and (max-width: 768px) {
         width: 95%;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        width: 85%;
+        font-size: 1.15rem;
     }
 `;
 
