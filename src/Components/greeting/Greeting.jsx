@@ -6,6 +6,7 @@ import { isNameState, nameState } from '../../data/greeting';
 
 const GreetingWrapper = styled.div`
     flex-basis: 10%;
+    z-index: 999;
 `;
 
 const GreetingHello = styled.h2`
@@ -29,9 +30,6 @@ const GreetingInput = styled.input`
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     border: none;
-    &:focus {
-        outline-color: var(--accent-100);
-    }
 `;
 
 const GreetingSubmit = styled.button`
@@ -70,7 +68,7 @@ export default function Greeting() {
             </GreetingHello>
             {isName ? null : (
                 <GreetingForm onSubmit={handleSubmit(submitName)}>
-                    <GreetingInput {...register('name', { required: true })} />
+                    <GreetingInput {...register('name')} />
                     <GreetingSubmit>Submit</GreetingSubmit>
                 </GreetingForm>
             )}
